@@ -1,7 +1,9 @@
 import React from "react";
 import "./Home.css";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation(["common"]);
   const distanceArr = [
     { name: "Plaža", icon: "/images/icons/Plaza.png", distance: "70m" },
     { name: "Bar", icon: "/images/icons/Bar.png", distance: "90m" },
@@ -19,11 +21,12 @@ const Home = () => {
     <div className="home">
       <div className="container">
         <div className="info">
-          Smješteni smo 25 km od Zadra, na južnoj strani otoka Vira. Imamo tri
+          {t("oNama")}
+          {/* Smješteni smo 25 km od Zadra, na južnoj strani otoka Vira. Imamo tri
           apartmana koja se nalaze u jednoj kući, no sva tri su u potpunosti
           odvojena. Parking se nalazi ispred kuće i besplatan je, a na
           raspolaganju Vam je i roštilj. Udaljenost apartmana od plaže je 70
-          metara. Plaža je šljunčana i pogodna za djecu.
+          metara. Plaža je šljunčana i pogodna za djecu. */}
         </div>
         <div className="distance">
           {distanceArr.map((el) => {

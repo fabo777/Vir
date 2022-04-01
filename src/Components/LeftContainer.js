@@ -3,8 +3,10 @@ import { Context } from "./Contexts/Context";
 import Home from "./Home";
 import Apartments from "./Apartments";
 import Kontakt from "./Kontakt";
+import { useTranslation } from "react-i18next";
 
 const LeftContainer = () => {
+  const { t } = useTranslation(["common"]);
   const {
     apNum,
     setApNum,
@@ -27,7 +29,10 @@ const LeftContainer = () => {
       ) : (
         <>
           <div className="mainContainer">
-            <h1 className="title">Apartmani Vesna</h1>
+            <h1 className="title">
+              {/* Apartmani Vesna */}
+              {t("naslov")}
+            </h1>
 
             <div>
               {apNum === 0 ? (

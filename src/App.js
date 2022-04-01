@@ -7,6 +7,8 @@ import Header from "./Components/Header";
 import RightContainer from "./Components/RightContainer";
 import Kontakt from "./Components/Kontakt";
 import LeftContainer from "./Components/LeftContainer";
+import { Suspense } from "react";
+import i18n from "./i18n";
 
 const App = () => {
   const [apNum, setApNum] = useState(0);
@@ -23,6 +25,12 @@ const App = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  const changeLanguage = (ln) => {
+    return () => {
+      i18n.changeLanguage(ln);
+    };
+  };
   let imgArr = [{ img: "mol" }, { img: "kuca" }, { img: "more" }];
   let apartmani = [
     {
@@ -53,31 +61,33 @@ const App = () => {
     },
   ];
   return (
-    <Context.Provider
-      value={{
-        apNum,
-        setApNum,
-        toggle,
-        setToggle,
-        apartmani,
-        active,
-        setActive,
-        imgArr,
-        count,
-        open,
-        setOpen,
-        handleOpen,
-        handleClose,
-        kontakt,
-        setKontakt,
-      }}
-    >
-      <div className="App">
-        <LeftContainer />
-
-        <RightContainer />
-      </div>
-    </Context.Provider>
+    <Suspense fallback={"Loading..."}>
+      <Context.Provider
+        value={{
+          apNum,
+          setApNum,
+          toggle,
+          setToggle,
+          apartmani,
+          active,
+          setActive,
+          imgArr,
+          count,
+          open,
+          setOpen,
+          handleOpen,
+          handleClose,
+          kontakt,
+          setKontakt,
+          changeLanguage,
+        }}
+      >
+        <div className="App">
+          <LeftContainer />
+          <RightContainer />
+        </div>
+      </Context.Provider>
+    </Suspense>
   );
 };
 

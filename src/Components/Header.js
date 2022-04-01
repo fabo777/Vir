@@ -3,7 +3,7 @@ import { Context } from "./Contexts/Context";
 import "./Header.css";
 
 function Header() {
-  const { kontakt, setKontakt, apNum } = useContext(Context);
+  const { kontakt, setKontakt, apNum, changeLanguage } = useContext(Context);
   const kontaktStyle = {
     color: kontakt === true ? "black" : apNum !== 0 ? "black" : "white",
   };
@@ -16,10 +16,18 @@ function Header() {
       >
         Kontakt
       </button>
-      <button style={kontaktStyle} className="HeaderBtn">
+      <button
+        onClick={changeLanguage("hr")}
+        style={kontaktStyle}
+        className="HeaderBtn"
+      >
         HR
       </button>
-      <button style={kontaktStyle} className="HeaderBtn">
+      <button
+        onClick={changeLanguage("en")}
+        style={kontaktStyle}
+        className="HeaderBtn"
+      >
         EN
       </button>
     </div>
