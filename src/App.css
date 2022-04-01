@@ -32,17 +32,18 @@ div {
 }
 .title {
   margin-top: 13.5%;
-  font-size: 2.3rem;
   -webkit-background-clip: text;
   background-image: url("../public/images/cover/kuca.jpg");
   background-clip: text;
   background-size: cover;
-  background-position-y: 3.5%;
-  font-weight: bolder;
-  text-align: center;
+  background-position-y: 3%;
   color: transparent;
-  padding: 1rem auto;
-  line-height: 3rem;
+  font-family: "Poppins", Bold;
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 3.75rem;
+  width: 100%;
 }
 .pocetna {
   font-family: "Poppins";
