@@ -1,0 +1,39 @@
+.gallery {
+  display: flex;
+  min-height: 100vh;
+  background-size: cover;
+  flex-direction: column;
+  background-position: center;
+  justify-content: space-between;
+}
+.galleryPreview {
+  align-self: flex-end;
+  margin: 0 auto;
+}
+.galleryButton {
+  height: 3.625rem;
+  width: 3.625rem;
+  margin-bottom: 3.625rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.kontaktImage {
+  height: 100vh;
+  cursor: pointer;
+}
+.kontaktImg {
+  height: 100vh;
+  background-image: url("../../public/images/cover/Karta.png");
+  object-position: cover;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  color: black;
+  cursor: pointer;
+}
+.kontaktImgHref {
+  height: 100vh;
+}
+.clickable {
+  height: 90%;
+}

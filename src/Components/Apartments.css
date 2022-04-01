@@ -1,0 +1,65 @@
+.basicInfo {
+  width: 88%;
+  margin: 10% auto 0 auto;
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: #ffffff;
+  justify-content: space-around;
+  border-radius: 0.25rem;
+  height: 2.81rem;
+  align-items: center;
+}
+.Half {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.4rem;
+  width: 50%;
+  border-right: 1px solid #276798;
+  font-weight: 600, "Semi bold";
+  line-height: 1.12rem;
+}
+.Half:last-child {
+  border-right: none;
+}
+.roww {
+  display: flex;
+  justify-content: flex-start;
+}
+.Reserve {
+  background: #014392;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.5rem;
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  margin: 1rem auto 0 auto;
+  height: 5.25vh;
+  font-family: Poppins;
+  font-size: 1.15rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.6rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+}
+.Btns {
+  cursor: pointer;
+  align-self: center;
+  font-family: "Poppins";
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: left;
+  width: 49.5%;
+  background-color: #ffffff;
+  border: 2px solid #c7e1f5;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 8px #c7e1f5;
+  border-radius: 0.25rem;
+}
+.Description {
+  width: 88%;
+  margin: 0.4rem auto;
+}

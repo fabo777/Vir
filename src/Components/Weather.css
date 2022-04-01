@@ -1,0 +1,25 @@
+.weatherMain {
+  margin-top: 20%;
+  background-color: rgba(16, 84, 147, 1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+.mainWeather {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.weatherRow {
+  border-bottom: 1px solid #276798;
+  width: 90%;
+  border-width: 90%;
+  margin: 0 auto;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
