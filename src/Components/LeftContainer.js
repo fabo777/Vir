@@ -37,8 +37,7 @@ const LeftContainer = () => {
             <div>
               {apNum === 0 ? (
                 <div style={{ marginTop: "1.7rem", marginBottom: "1.7rem" }}>
-                  {" "}
-                  Odaberi apartman:
+                  {t("odaberiApartman")}
                 </div>
               ) : (
                 <button
@@ -48,7 +47,7 @@ const LeftContainer = () => {
                   }}
                   className="pocetna"
                 >
-                  {"< Početna"}
+                  {t("pocetna")}
                 </button>
               )}
             </div>
@@ -61,7 +60,7 @@ const LeftContainer = () => {
                     style={{ width: apNum === el.id && "6.81rem" }}
                     className="ApBtn"
                   >
-                    {apNum !== el.id ? el.id : "Apartman " + el.id}
+                    {apNum !== el.id ? el.id : `${t("apartman")}` + el.id}
                   </button>
                 );
               })}

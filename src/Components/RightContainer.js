@@ -1,13 +1,14 @@
 import React, { useState, useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { Context } from "./Contexts/Context";
 import Header from "./Header";
 import "./RightContainer.css";
 import TransitionsModal from "./TransitionsModal";
 import "./Header.css";
 import "../App.css";
-import { display } from "@mui/system";
 
 const RightContainer = () => {
+  const { t } = useTranslation(["common"]);
   const { imgArr, count, apNum, apartmani, kontakt } = useContext(Context);
   const [showImg, setShowImg] = useState(0);
 

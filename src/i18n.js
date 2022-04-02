@@ -13,13 +13,14 @@ i18n
     },
     fallbackLng: "hr",
     debug: false,
-    ns: ["common", "rest"],
+    ns: ["common"],
     interpolation: {
       escapeValue: false,
       formatSeparator: ",",
     },
     react: {
       wait: true,
+      useSuspense: true,
     },
   });
 export default i18n;

@@ -3,16 +3,28 @@ import "./Home.css";
 import { useTranslation } from "react-i18next";
 
 const Home = () => {
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["common", "rest"]);
   const distanceArr = [
-    { name: "Plaža", icon: "/images/icons/Plaza.png", distance: "70m" },
-    { name: "Bar", icon: "/images/icons/Bar.png", distance: "90m" },
-    { name: "Restoran", icon: "/images/icons/Restoran.png", distance: "100m" },
-    { name: "Trgovina", icon: "/images/icons/Trgovina.png", distance: "250m" },
-    { name: "Centar", icon: "/images/icons/Centar.png", distance: "2km" },
-    { name: "Pošta", icon: "/images/icons/Posta.png", distance: "3km" },
+    { name: `${t("plaza")}`, icon: "/images/icons/Plaza.png", distance: "70m" },
+    { name: `${t("bar")}`, icon: "/images/icons/Bar.png", distance: "90m" },
     {
-      name: "Autobusni Kolodvor",
+      name: `${t("restoran")}`,
+      icon: "/images/icons/Restoran.png",
+      distance: "100m",
+    },
+    {
+      name: `${t("trgovina")}`,
+      icon: "/images/icons/Trgovina.png",
+      distance: "250m",
+    },
+    {
+      name: `${t("centar")}`,
+      icon: "/images/icons/Centar.png",
+      distance: "2km",
+    },
+    { name: `${t("posta")}`, icon: "/images/icons/Posta.png", distance: "3km" },
+    {
+      name: `${t("autobusniKolodvor")}`,
       icon: "/images/icons/Autobusni.png",
       distance: "3km",
     },

@@ -1,17 +1,19 @@
 import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import Weather from "./Weather";
 import { Context } from "./Contexts/Context";
 
 const Kontakt = () => {
+  const { t } = useTranslation(["common"]);
   const { setKontakt } = useContext(Context);
   const kontaktArr = [
     {
-      name: "Vlasnik: ",
+      name: `${t("vlasnik")}`,
       value: "Željko Jerbić",
       icon: "/images/icons/Osoba.png",
     },
     {
-      name: "Kontakt: ",
+      name: `${t("kontaktB")}`,
       value: "+385 99 3731 515 (Petra)",
       icon: "/images/icons/Kontakt.png",
     },
@@ -34,7 +36,7 @@ const Kontakt = () => {
       icon: "/images/icons/Facebook.png",
     },
     {
-      name: "Adresa: ",
+      name: `${t("adresa")}`,
       value: "XXVIII Miljkovica 9, 23234 Otok Vir, Hrvatska",
       icon: "/images/icons/Adresa.png",
     },
@@ -42,7 +44,7 @@ const Kontakt = () => {
   return (
     <>
       <div className="mainContainer">
-        <h1 className="title">Apartmani Vesna</h1>
+        <h1 className="title">{t("naslov")}</h1>
         <button
           onClick={() => {
             /* setApNum(0);
@@ -51,7 +53,7 @@ const Kontakt = () => {
           }}
           className="pocetna"
         >
-          {"< Početna"}
+          {t("pocetna")}
         </button>
 
         <div className="distance" style={{ marginTop: "10%" }}>

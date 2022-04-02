@@ -105,7 +105,6 @@ const Weather = () => {
       }
     );
     const data = await response.json();
-    console.log(data);
     setWeather(data);
     setLoading(false);
   };
