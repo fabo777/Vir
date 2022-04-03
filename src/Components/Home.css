@@ -60,3 +60,9 @@ body {
   background-position: center;
   margin-right: 0.1rem;
 }
+
+@media (max-width: 850px) {
+  .distance {
+    margin-bottom: 5%;
+  }
+}

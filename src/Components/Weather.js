@@ -147,7 +147,7 @@ const Weather = () => {
   };
 
   return (
-    <div className="weatherMain">
+    <div className="weatherContainer">
       <div className="weatherRow">Vir</div>
       {isLoading ? (
         <div>Loading...</div>

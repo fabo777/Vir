@@ -4,6 +4,7 @@ import "./Apartments.css";
 import Sadrzaj from "./Sadrzaj";
 import TransitionsModal from "./TransitionsModal";
 import { useTranslation } from "react-i18next";
+import Galerija from "./Galerija";
 
 const Apartments = () => {
   const { t } = useTranslation(["common"]);
@@ -18,6 +19,8 @@ const Apartments = () => {
     setOpen,
     handleOpen,
     handleClose,
+    kontakt,
+    width,
   } = useContext(Context);
 
   const btnSadrzaj = {
@@ -56,7 +59,7 @@ const Apartments = () => {
           <div>{apartmani[apNum - 1].brOsoba}</div>
         </div>
       </div>
-      <div style={{ width: "88%", margin: "10% auto 0 auto" }}>
+      <div style={{ width: "88%", margin: "5% auto 0 auto" }}>
         <div className="distance">
           <div className="row">
             <button
@@ -86,7 +89,7 @@ const Apartments = () => {
             <div className="Description">{apartmani[apNum - 1].text}</div>
           )}
         </div>
-
+        {kontakt !== true && apNum !== 0 && width < 850 && <Galerija />}
         <button onClick={() => handleOpen()} className="Reserve">
           {t("provjeriDostupnost")}
         </button>

@@ -4,8 +4,11 @@ import Home from "./Home";
 import Apartments from "./Apartments";
 import Kontakt from "./Kontakt";
 import { useTranslation } from "react-i18next";
+import Galerija from "./Galerija";
+import Map from "./Map";
 
 const LeftContainer = () => {
+  let width = window.innerWidth;
   const { t } = useTranslation(["common"]);
   const {
     apNum,
@@ -29,10 +32,7 @@ const LeftContainer = () => {
       ) : (
         <>
           <div className="mainContainer">
-            <h1 className="title">
-              {/* Apartmani Vesna */}
-              {t("naslov")}
-            </h1>
+            <h1 className="title">{t("naslov")}</h1>
 
             <div>
               {apNum === 0 ? (

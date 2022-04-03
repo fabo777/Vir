@@ -7,18 +7,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Context } from "./Contexts/Context";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "65%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
-
 export default function TransitionsModal() {
   const {
     apNum,
@@ -31,8 +19,19 @@ export default function TransitionsModal() {
     setOpen,
     handleOpen,
     handleClose,
+    width,
   } = useContext(Context);
-
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: width < 850 ? "50%" : "65%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
   return (
     <div>
       <Modal

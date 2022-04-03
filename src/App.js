@@ -18,6 +18,8 @@ const App = () => {
   const handleClose = () => setOpen(false);
   const [kontakt, setKontakt] = useState(false);
 
+  let width = window.innerWidth;
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prevCount) => (prevCount === 2 ? 0 : prevCount + 1));
@@ -78,6 +80,7 @@ const App = () => {
         kontakt,
         setKontakt,
         changeLanguage,
+        width,
       }}
     >
       <div className="App">

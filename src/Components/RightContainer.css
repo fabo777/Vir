@@ -37,3 +37,28 @@
 .clickable {
   height: 90%;
 }
+@media (max-width: 850px) {
+  .gallery {
+    border-radius: 1rem;
+    min-height: 40vh;
+    justify-content: flex-end;
+    margin: 5% auto 0 auto;
+  }
+  .kontaktImg {
+    height: 40vh;
+    background-position-y: 80%;
+    background-position-x: 85%;
+    background-position: cover;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    margin: 1rem auto;
+  }
+
+  .galleryButton {
+    margin-bottom: 1rem;
+  }
+  .clickable {
+    height: 100%;
+  }
+}

@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import Weather from "./Weather";
 import { Context } from "./Contexts/Context";
+import Map from "./Map";
 
 const Kontakt = () => {
   const { t } = useTranslation(["common"]);
-  const { setKontakt } = useContext(Context);
+  const { setKontakt, kontakt, width } = useContext(Context);
   const kontaktArr = [
     {
       name: `${t("vlasnik")}`,
@@ -47,8 +48,6 @@ const Kontakt = () => {
         <h1 className="title">{t("naslov")}</h1>
         <button
           onClick={() => {
-            /* setApNum(0);
-          setActive(1); */
             setKontakt(false);
           }}
           className="pocetna"
@@ -82,6 +81,8 @@ const Kontakt = () => {
             );
           })}
         </div>
+        {kontakt === true && width < 850 && <Map />}
+
         <Weather />
       </div>
     </>

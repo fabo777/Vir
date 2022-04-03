@@ -1,4 +1,4 @@
-.weatherMain {
+.weatherContainer {
   margin-top: 20%;
   background-color: rgba(16, 84, 147, 1);
   color: white;
@@ -22,4 +22,10 @@
 .wrapper {
   display: flex;
   justify-content: space-evenly;
+}
+@media (max-width: 850px) {
+  .weatherContainer {
+    border-radius: 1rem;
+    margin: 5% AUTO 5% AUTO;
+  }
 }
