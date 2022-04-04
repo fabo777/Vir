@@ -3,8 +3,11 @@ import { Context } from "./Contexts/Context";
 import "./Apartments.css";
 import Sadrzaj from "./Sadrzaj";
 import TransitionsModal from "./TransitionsModal";
+import { useTranslation } from "react-i18next";
+import Galerija from "./Galerija";
 
 const Apartments = () => {
+  const { t } = useTranslation(["common"]);
   const {
     apNum,
     apartmani,
@@ -16,15 +19,15 @@ const Apartments = () => {
     setOpen,
     handleOpen,
     handleClose,
+    kontakt,
+    width,
   } = useContext(Context);
 
   const btnSadrzaj = {
-    backgroundColor:
-      active === 1 && "rgba(199, 225, 245, 1)" /* "rgba(90, 141, 201, 1)" */,
+    backgroundColor: active === 1 && "rgba(199, 225, 245, 1)",
   };
   const btnOpis = {
-    backgroundColor:
-      active === 2 && "rgba(199, 225, 245, 1)" /* "rgba(90, 141, 201, 1)" */,
+    backgroundColor: active === 2 && "rgba(199, 225, 245, 1)",
   };
 
   return (
@@ -38,7 +41,7 @@ const Apartments = () => {
                 backgroundImage: "url(/images/icons/Povrsina.png)",
               }}
             ></div>
-            <div> POVRŠINA</div>
+            <div> {t("povrsina")}</div>
           </div>
           <div>{apartmani[apNum - 1].povrsina}</div>
         </div>
@@ -51,12 +54,12 @@ const Apartments = () => {
                 backgroundImage: "url(/images/icons/Osoba.png)",
               }}
             ></div>
-            <div> OSOBA</div>
+            <div>{t("osoba")}</div>
           </div>
           <div>{apartmani[apNum - 1].brOsoba}</div>
         </div>
       </div>
-      <div style={{ width: "88%", margin: "10% auto 0 auto" }}>
+      <div style={{ width: "88%", margin: "5% auto 0 auto" }}>
         <div className="distance">
           <div className="row">
             <button
@@ -67,7 +70,7 @@ const Apartments = () => {
               className="Btns"
               style={btnSadrzaj}
             >
-              Sadržaj:
+              {t("sadrzaj")}
             </button>
             <button
               onClick={() => {
@@ -77,7 +80,7 @@ const Apartments = () => {
               className="Btns"
               style={btnOpis}
             >
-              Opis:
+              {t("opis")}
             </button>
           </div>
           {toggle === false ? (
@@ -86,11 +89,10 @@ const Apartments = () => {
             <div className="Description">{apartmani[apNum - 1].text}</div>
           )}
         </div>
-
+        {kontakt !== true && apNum !== 0 && width < 850 && <Galerija />}
         <button onClick={() => handleOpen()} className="Reserve">
-          Rezerviraj sada
+          {t("provjeriDostupnost")}
         </button>
-        {/* <TransitionsModal /> */}
       </div>
     </div>
   );

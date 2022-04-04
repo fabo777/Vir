@@ -1,95 +1,31 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { Context } from "./Contexts/Context";
 import Header from "./Header";
 import "./RightContainer.css";
 import TransitionsModal from "./TransitionsModal";
 import "./Header.css";
 import "../App.css";
-import { display } from "@mui/system";
+import Galerija from "./Galerija";
+import Cover from "./Cover";
+import Map from "./Map";
 
 const RightContainer = () => {
-  const { imgArr, count, apNum, apartmani, kontakt } = useContext(Context);
-  const [showImg, setShowImg] = useState(0);
-
-  const galleryStyle = {
-    backgroundImage: ` url(/images/Apartman${apNum}/${showImg}.JPG)`,
-  };
-  const prevPic = () => {
-    if (showImg === 0) {
-      return setShowImg(apartmani[apNum - 1].pictures.length - 1);
-    } else {
-      setShowImg(showImg - 1);
-    }
-  };
-  const nextPic = () => {
-    if (showImg === apartmani[apNum - 1].pictures.length - 1) {
-      return setShowImg(0);
-    } else {
-      setShowImg(showImg + 1);
-    }
-  };
+  const { t } = useTranslation(["common"]);
+  const { imgArr, count, apNum, apartmani, kontakt, width } =
+    useContext(Context);
 
   return (
     <div className="rightContainer">
       <TransitionsModal />
-      {kontakt === true ? (
-        <div className="kontaktImg">
-          <Header />
-          <a
-            href={"https://goo.gl/maps/JkGWwdmofrwLNkeJ6"}
-            target="_blank"
-            className="kontaktImgHref"
-          >
-            <div className="clickable"></div>
-          </a>
-        </div>
+      {width < 850 ? (
+        <Cover />
+      ) : kontakt === true ? (
+        <Map />
       ) : apNum === 0 ? (
-        <div
-          className="bigImg"
-          style={{
-            backgroundImage: `url(/images/cover/${imgArr[count].img}.jpg)`,
-          }}
-        >
-          <Header />
-        </div>
+        <Cover />
       ) : (
-        <div className="gallery" style={galleryStyle}>
-          <Header />
-          <div className="galleryPreview">
-            <button
-              style={{
-                backgroundImage: ` url(/images/Apartman${apNum}/${
-                  showImg === 0
-                    ? apartmani[apNum - 1].pictures.length - 1
-                    : showImg === apartmani[apNum - 1].pictures.length - 1
-                    ? apartmani[apNum - 1].pictures.length - 2
-                    : showImg - 1
-                }.JPG)`,
-              }}
-              onClick={() => prevPic()}
-              className="galleryButton"
-            ></button>
-            <button
-              style={{
-                backgroundImage: ` url(/images/Apartman${apNum}/${showImg}.JPG)`,
-              }}
-              className="galleryButton"
-            ></button>
-            <button
-              style={{
-                backgroundImage: ` url(/images/Apartman${apNum}/${
-                  showImg === apartmani[apNum - 1].pictures.length - 1
-                    ? showImg - (apartmani[apNum - 1].pictures.length - 1)
-                    : showImg === 0
-                    ? showImg + 1
-                    : showImg + 1
-                }.JPG)`,
-              }}
-              onClick={() => nextPic()}
-              className="galleryButton"
-            ></button>
-          </div>
-        </div>
+        <Galerija />
       )}
     </div>
   );

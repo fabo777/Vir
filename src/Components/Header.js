@@ -1,9 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { Context } from "./Contexts/Context";
 import "./Header.css";
 
 function Header() {
-  const { kontakt, setKontakt, apNum } = useContext(Context);
+  const { t } = useTranslation(["common"]);
+  const { kontakt, setKontakt, apNum, changeLanguage } = useContext(Context);
   const kontaktStyle = {
     color: kontakt === true ? "black" : apNum !== 0 ? "black" : "white",
   };
@@ -14,12 +16,20 @@ function Header() {
         style={kontaktStyle}
         onClick={() => setKontakt(!kontakt)}
       >
-        Kontakt
+        {t("kontakt")}
       </button>
-      <button style={kontaktStyle} className="HeaderBtn">
+      <button
+        onClick={changeLanguage("hr")}
+        style={kontaktStyle}
+        className="HeaderBtn"
+      >
         HR
       </button>
-      <button style={kontaktStyle} className="HeaderBtn">
+      <button
+        onClick={changeLanguage("en")}
+        style={kontaktStyle}
+        className="HeaderBtn"
+      >
         EN
       </button>
     </div>

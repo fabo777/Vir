@@ -105,7 +105,6 @@ const Weather = () => {
       }
     );
     const data = await response.json();
-    console.log(data);
     setWeather(data);
     setLoading(false);
   };
@@ -148,7 +147,7 @@ const Weather = () => {
   };
 
   return (
-    <div className="weatherMain">
+    <div className="weatherContainer">
       <div className="weatherRow">Vir</div>
       {isLoading ? (
         <div>Loading...</div>

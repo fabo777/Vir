@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { Context } from "./Contexts/Context";
+import { useTranslation } from "react-i18next";
 
 const Sadrzaj = () => {
+  const { t } = useTranslation(["common"]);
   const { apNum, apartmani } = useContext(Context);
   const ApIcons = [
-    { name: "Klima uređaj", id: "Klima", icon: "/images/icons/Klima1.png" },
+    { name: `${t("klima")}`, id: "Klima", icon: "/images/icons/Klima1.png" },
     { name: "WiFi", id: "WiFi", icon: "/images/icons/WiFi.png" },
     {
       name: "TV",
@@ -13,39 +15,39 @@ const Sadrzaj = () => {
       style: "4rem",
     },
     {
-      name: "Kuhalo za vodu",
+      name: `${t("kuhalo")}`,
       id: "Kuhalo",
       icon: "/images/icons/Kuhalo.png",
     },
     {
-      name: "Mikrovalna peć",
+      name: `${t("mikrovalna")}`,
       id: "Mikrovalna",
       icon: "/images/icons/Mikrovalna1.png",
     },
     {
-      name: "Napa",
+      name: `${t("napa")}`,
       id: "Napa",
       icon: "/images/icons/Napa.png",
     },
     {
-      name: "Kuhinjska ploča",
+      name: `${t("kuhinjskaPloca")}`,
       id: "Kuhinjskaploca",
       icon: "/images/icons/Kuhinjskaploca.png",
     },
 
     {
-      name: "Pećnica",
+      name: `${t("pecnica")}`,
       id: "Pecnica",
       icon: "/images/icons/Pecnica.png",
     },
 
     {
-      name: "Perilica posuđa",
+      name: `${t("sudjerica")}`,
       id: "Sundjerica",
       icon: "/images/icons/Sundjerica.png",
     },
     {
-      name: "Perilica rublja",
+      name: `${t("vesmasina")}`,
       id: "Vesmasina",
       icon: "/images/icons/Vesmasina.png",
     },
@@ -54,7 +56,7 @@ const Sadrzaj = () => {
     <div>
       {ApIcons.map((el) => {
         return (
-          <div className="row">
+          <div key={el.name} className="row">
             <div className="row2">
               {/* <img src={el.icon} /> */}
               <div

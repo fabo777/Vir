@@ -32,17 +32,18 @@ div {
 }
 .title {
   margin-top: 13.5%;
-  font-size: 2.3rem;
   -webkit-background-clip: text;
-  background-image: url("../public/images/cover/kuca.jpg");
+  background-image: url("../public/images/cover/Clouds.jpg");
   background-clip: text;
   background-size: cover;
-  background-position-y: 3.5%;
-  font-weight: bolder;
-  text-align: center;
+  background-position-y: 3%;
   color: transparent;
-  padding: 1rem auto;
-  line-height: 3rem;
+  font-family: "Poppins", Bold;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 3.75rem;
+  width: 100%;
 }
 .pocetna {
   font-family: "Poppins";
@@ -79,6 +80,52 @@ div {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  object-fit: cover;
+
+  object-fit: fill;
+}
+@media (min-width: 1300px) {
+  .title {
+    font-family: "Poppins";
+    font-size: 3.5rem;
+    background-position-y: 8%;
+    font-weight: bolder;
+    margin-top: 8%;
+  }
+}
+
+@media (max-width: 850px) {
+  .App {
+    flex-direction: column-reverse;
+  }
+  .title {
+    margin-top: 5%;
+    font-size: 3.5rem;
+  }
+
+  .rightContainer {
+    width: 100%;
+    height: 40vh;
+  }
+  .bigImg {
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+  }
+
+  .leftContainer {
+    width: 100%;
+    height: 60%;
+    background-color: #c7e1f5;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    margin-top: 5%;
+    font-size: 2.2rem;
+    line-height: 2rem;
+  }
 }

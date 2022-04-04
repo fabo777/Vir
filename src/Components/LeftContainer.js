@@ -3,8 +3,13 @@ import { Context } from "./Contexts/Context";
 import Home from "./Home";
 import Apartments from "./Apartments";
 import Kontakt from "./Kontakt";
+import { useTranslation } from "react-i18next";
+import Galerija from "./Galerija";
+import Map from "./Map";
 
 const LeftContainer = () => {
+  let width = window.innerWidth;
+  const { t } = useTranslation(["common"]);
   const {
     apNum,
     setApNum,
@@ -27,13 +32,12 @@ const LeftContainer = () => {
       ) : (
         <>
           <div className="mainContainer">
-            <h1 className="title">Apartmani Vesna</h1>
+            <h1 className="title">{t("naslov")}</h1>
 
             <div>
               {apNum === 0 ? (
                 <div style={{ marginTop: "1.7rem", marginBottom: "1.7rem" }}>
-                  {" "}
-                  Odaberi apartman:
+                  {t("odaberiApartman")}
                 </div>
               ) : (
                 <button
@@ -43,7 +47,7 @@ const LeftContainer = () => {
                   }}
                   className="pocetna"
                 >
-                  {"< Početna"}
+                  {t("pocetna")}
                 </button>
               )}
             </div>
@@ -56,7 +60,7 @@ const LeftContainer = () => {
                     style={{ width: apNum === el.id && "6.81rem" }}
                     className="ApBtn"
                   >
-                    {apNum !== el.id ? el.id : "Apartman " + el.id}
+                    {apNum !== el.id ? el.id : `${t("apartman")}` + el.id}
                   </button>
                 );
               })}
