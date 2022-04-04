@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
+/* import Fade from "react-reveal/Fade"; */
 import { Context } from "./Contexts/Context";
 import Header from "./Header";
+/* import config from "react-reveal/globals"; */
 
 const Cover = () => {
   const { imgArr, count } = useContext(Context);
   return (
+    /*     <Fade ssrFadeout left> */
     <div
       className="bigImg"
       style={{
@@ -13,6 +16,7 @@ const Cover = () => {
     >
       <Header />
     </div>
+    /*     </Fade> */
   );
 };
 

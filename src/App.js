@@ -14,16 +14,22 @@ const App = () => {
   const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState(1);
   const [open, setOpen] = React.useState(false);
+  const [kontakt, setKontakt] = useState(false);
+  const [showImg, setShowImg] = useState(0);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [kontakt, setKontakt] = useState(false);
 
   let width = window.innerWidth;
 
   useEffect(() => {
+    setShowImg(0);
+  }, [apNum]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      setCount((prevCount) => (prevCount === 2 ? 0 : prevCount + 1));
-    }, 5000);
+      setCount((prevCount) => (prevCount === 5 ? 0 : prevCount + 1));
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -32,7 +38,14 @@ const App = () => {
       i18n.changeLanguage(ln);
     };
   };
-  let imgArr = [{ img: "mol" }, { img: "kuca" }, { img: "more" }];
+  let imgArr = [
+    { img: "kuca2" },
+    { img: "plaza2" },
+    { img: "mol2" },
+    { img: "plaza" },
+    { img: "kuca" },
+    { img: "mol" },
+  ];
   let apartmani = [
     {
       name: "Apartman 1",
@@ -81,6 +94,8 @@ const App = () => {
         setKontakt,
         changeLanguage,
         width,
+        showImg,
+        setShowImg,
       }}
     >
       <div className="App">

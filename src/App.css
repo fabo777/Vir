@@ -80,8 +80,8 @@ div {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  object-fit: cover;
+
+  object-fit: fill;
 }
 @media (min-width: 1300px) {
   .title {
@@ -89,6 +89,7 @@ div {
     font-size: 3.5rem;
     background-position-y: 8%;
     font-weight: bolder;
+    margin-top: 8%;
   }
 }
 
@@ -125,5 +126,6 @@ div {
   .title {
     margin-top: 5%;
     font-size: 2.2rem;
+    line-height: 2rem;
   }
 }

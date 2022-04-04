@@ -5,9 +5,16 @@ import "./RightContainer.css";
 import "../App.css";
 
 const Galerija = () => {
-  const [showImg, setShowImg] = useState(0);
-  const { imgArr, count, apNum, apartmani, kontakt, width } =
-    useContext(Context);
+  const {
+    imgArr,
+    count,
+    apNum,
+    apartmani,
+    kontakt,
+    width,
+    showImg,
+    setShowImg,
+  } = useContext(Context);
 
   const galleryStyle = {
     backgroundImage: ` url(/images/Apartman${apNum}/${showImg}.JPG)`,
