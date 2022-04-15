@@ -1,33 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "./Contexts/Context";
 import "./Apartments.css";
-import Sadrzaj from "./Sadrzaj";
-import TransitionsModal from "./TransitionsModal";
+import Content from "./Content";
 import { useTranslation } from "react-i18next";
-import Galerija from "./Galerija";
+import Gallery from "./Gallery";
+import apartmani from "../Data/apartmani.json";
 
 const Apartments = () => {
   const { t } = useTranslation(["common"]);
-  const {
-    apNum,
-    apartmani,
-    toggle,
-    setToggle,
-    active,
-    setActive,
-    open,
-    setOpen,
-    handleOpen,
-    handleClose,
-    kontakt,
-    width,
-  } = useContext(Context);
+  const { apNum, toggle, setToggle, handleOpen, kontakt, ScreenSize } =
+    useContext(Context);
 
   const btnSadrzaj = {
-    backgroundColor: active === 1 && "rgba(199, 225, 245, 1)",
+    backgroundColor: !toggle && "rgba(199, 225, 245, 1)",
   };
   const btnOpis = {
-    backgroundColor: active === 2 && "rgba(199, 225, 245, 1)",
+    backgroundColor: toggle && "rgba(199, 225, 245, 1)",
   };
 
   return (
@@ -63,20 +51,14 @@ const Apartments = () => {
         <div className="distance">
           <div className="row">
             <button
-              onClick={() => {
-                setToggle(false);
-                setActive(1);
-              }}
+              onClick={() => setToggle(false)}
               className="Btns"
               style={btnSadrzaj}
             >
               {t("sadrzaj")}
             </button>
             <button
-              onClick={() => {
-                setToggle(true);
-                setActive(2);
-              }}
+              onClick={() => setToggle(true)}
               className="Btns"
               style={btnOpis}
             >
@@ -84,12 +66,14 @@ const Apartments = () => {
             </button>
           </div>
           {toggle === false ? (
-            <Sadrzaj />
+            <Content />
           ) : (
-            <div className="Description">{apartmani[apNum - 1].text}</div>
+            <div className="Description">
+              {t(`${apartmani[apNum - 1].text}`)}
+            </div>
           )}
         </div>
-        {kontakt !== true && apNum !== 0 && width < 850 && <Galerija />}
+        {kontakt !== true && apNum !== 0 && ScreenSize < 850 && <Gallery />}
         <button onClick={() => handleOpen()} className="Reserve">
           {t("provjeriDostupnost")}
         </button>

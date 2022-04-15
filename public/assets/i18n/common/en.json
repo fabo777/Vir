@@ -16,6 +16,8 @@
   "sadrzaj": "Content:",
   "opis": "Description:",
   "provjeriDostupnost": "Check Availability",
+  "TV": "TV",
+  "WiFi": "WiFi",
   "klima": "Air conditioner",
   "kuhalo": "Kettle",
   "mikrovalna": "Microwave",
@@ -30,5 +32,15 @@
   "kontakt": "Contact",
   "vlasnik": "Owner: ",
   "kontaktB": "Contact: ",
-  "adresa": "Address: "
+  "adresa": "Address: ",
+  "imeiprezime": "Your Name and Surname",
+  "email": "Your E-mail",
+  "zeljeniapartman": "Preferred apartment",
+  "DatumDolaska": "Date of arrival *",
+  "DatumOdlaska": "Departure date *",
+  "BrojGostiju": "Number of guests",
+  "message": "If you have any questions, feel free to write them here",
+  "send": "Send a request",
+  "textForm": "The answer to the requested inquiry will arrive at your e-mail address, as soon as possible.",
+  "mailposlan": "Your Email was successfully sent!"
 }

@@ -1,35 +1,54 @@
+.ImageContainer {
+  height: 82%;
+  width: 94%;
+  margin: 0 4% 0 2%;
+  border: 1px solid #276798;
+  border-radius: 1rem;
+}
 .gallery {
   display: flex;
-  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
   background-size: cover;
   flex-direction: column;
   background-position: center;
   justify-content: space-between;
+  border-radius: 1rem;
+  width: 100%;
 }
 .galleryPreview {
-  align-self: flex-end;
+  width: fit-content;
   margin: 0 auto;
 }
 .galleryButton {
-  height: 3.625rem;
-  width: 3.625rem;
-  margin-bottom: 3.625rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 4rem;
+  width: 4rem;
+  margin: 0.9rem auto;
+}
+.galleryButton:first-child {
+  border-top-left-radius: 0.7rem;
+  border-bottom-left-radius: 0.7rem;
+}
+.galleryButton:last-child {
+  border-top-right-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
 }
 .kontaktImage {
   height: 100vh;
   cursor: pointer;
 }
 .kontaktImg {
-  height: 100vh;
+  height: 100%;
   background-image: url("../../public/images/cover/Karta.png");
   object-position: cover;
   background-position: bottom right;
   background-repeat: no-repeat;
   color: black;
   cursor: pointer;
+  border-radius: 1rem;
 }
 .kontaktImgHref {
   height: 100vh;
@@ -38,21 +57,28 @@
   height: 90%;
 }
 @media (max-width: 850px) {
+  .ImageContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0;
+  }
   .gallery {
     border-radius: 1rem;
-    min-height: 40vh;
+    min-height: 40%;
     justify-content: flex-end;
-    margin: 5% auto 0 auto;
+    margin: 0 auto 0 auto;
   }
   .kontaktImg {
-    height: 40vh;
+    height: 100%;
     background-position-y: 80%;
     background-position-x: 85%;
     background-position: cover;
     width: 100%;
     margin: 0 auto;
     border-radius: 1rem;
-    margin: 1rem auto;
+    margin: 0 auto;
   }
 
   .galleryButton {
@@ -60,5 +86,17 @@
   }
   .clickable {
     height: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .gallery {
+    border-radius: 1rem;
+    height: 100%;
+    justify-content: flex-end;
+    margin: 0 auto;
+  }
+  .fullRightSide {
+    height: 40vh;
   }
 }

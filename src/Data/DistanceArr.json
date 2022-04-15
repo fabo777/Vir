@@ -1,0 +1,25 @@
+[
+  { "name": "plaza", "icon": "/images/icons/Plaza.png", "distance": "70m" },
+  { "name": "bar", "icon": "/images/icons/Bar.png", "distance": "90m" },
+  {
+    "name": "restoran",
+    "icon": "/images/icons/Restoran.png",
+    "distance": "100m"
+  },
+  {
+    "name": "trgovina",
+    "icon": "/images/icons/Trgovina.png",
+    "distance": "250m"
+  },
+  {
+    "name": "centar",
+    "icon": "/images/icons/Centar.png",
+    "distance": "2km"
+  },
+  { "name": "posta", "icon": "/images/icons/Posta.png", "distance": "3km" },
+  {
+    "name": "autobusniKolodvor",
+    "icon": "/images/icons/Autobusni.png",
+    "distance": "3km"
+  }
+]

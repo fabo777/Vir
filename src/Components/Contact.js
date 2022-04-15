@@ -3,45 +3,22 @@ import { useTranslation } from "react-i18next";
 import Weather from "./Weather";
 import { Context } from "./Contexts/Context";
 import Map from "./Map";
+import kontaktArr from "../Data/kontaktArr.json";
 
-const Kontakt = () => {
+const Contact = () => {
   const { t } = useTranslation(["common"]);
-  const { setKontakt, kontakt, width } = useContext(Context);
-  const kontaktArr = [
-    {
-      name: `${t("vlasnik")}`,
-      value: "Željko Jerbić",
-      icon: "/images/icons/Osoba.png",
-    },
-    {
-      name: `${t("kontaktB")}`,
-      value: "+385 99 3731 515 (Petra)",
-      icon: "/images/icons/Kontakt.png",
-    },
-    {
-      name: "E-mail: ",
-      value: "petra@apartmani-vesna-vir.com.hr",
-      icon: "/images/icons/Email.png",
-    },
-    {
-      name: ":",
-      value: (
-        <a
-          style={{ color: "black" }}
-          href="https://www.facebook.com/apartmanivesnavir"
-          target="_blank"
-        >
-          Apartmani Vesna Vir
-        </a>
-      ),
-      icon: "/images/icons/Facebook.png",
-    },
-    {
-      name: `${t("adresa")}`,
-      value: "XXVIII Miljkovica 9, 23234 Otok Vir, Hrvatska",
-      icon: "/images/icons/Adresa.png",
-    },
-  ];
+  const { setKontakt, kontakt, ScreenSize } = useContext(Context);
+
+  const facebookLink = (
+    <a
+      rel="noreferrer"
+      style={{ color: "black" }}
+      href="https://www.facebook.com/apartmanivesnavir"
+      target="_blank"
+    >
+      Apartmani Vesna Vir
+    </a>
+  );
   return (
     <>
       <div className="mainContainer">
@@ -74,14 +51,14 @@ const Kontakt = () => {
                       backgroundImage: `url(${el.icon})`,
                     }}
                   ></div>
-                  <div>{el.name}</div>
+                  <div>{t(`${el.name}`)}</div>
                 </div>
-                <div>{el.value}</div>
+                <div>{el.value ? el.value : facebookLink}</div>
               </div>
             );
           })}
         </div>
-        {kontakt === true && width < 850 && <Map />}
+        {kontakt === true && ScreenSize < 850 && <Map />}
 
         <Weather />
       </div>
@@ -89,4 +66,4 @@ const Kontakt = () => {
   );
 };
 
-export default Kontakt;
+export default Contact;

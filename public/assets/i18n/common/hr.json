@@ -16,6 +16,8 @@
   "sadrzaj": "Sadržaj:",
   "opis": "Opis:",
   "provjeriDostupnost": "Provjeri Dostupnost",
+  "TV": "TV",
+  "WiFi": "WiFi",
   "klima": "Klima uređaj",
   "kuhalo": "Kuhalo za vodu",
   "mikrovalna": "Mikrovalna peć",
@@ -30,5 +32,15 @@
   "kontakt": "Kontakt",
   "vlasnik": "Vlasnik: ",
   "kontaktB": "Kontakt: ",
-  "adresa": "Adresa: "
+  "adresa": "Adresa: ",
+  "imeiprezime": "Vaše Ime i Prezime",
+  "email": "Vaš E-mail",
+  "zeljeniapartman": "Željeni apartman",
+  "DatumDolaska": "Datum dolaska *",
+  "DatumOdlaska": "Datum odlaska *",
+  "BrojGostiju": "Broj gostiju",
+  "message": "Ukoliko imate bilokakva pitanja,slobodo ih ovdje napišite ",
+  "send": "Pošalji upit",
+  "textForm": "Odgovor na traženi upit, stići će na Vašu e-mail adresu u najkraćem mogućem roku.",
+  "mailposlan": "Vaš Email je uspješno poslan!"
 }
