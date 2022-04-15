@@ -1,0 +1,27 @@
+[
+  {
+    "name": "vlasnik",
+    "value": "Željko Jerbić",
+    "icon": "/images/icons/Osoba.png"
+  },
+  {
+    "name": "kontaktB",
+    "value": "+385 99 3731 515 (Petra)",
+    "icon": "/images/icons/Kontakt.png"
+  },
+  {
+    "name": "E-mail: ",
+    "value": "petra@apartmani-vesna-vir.com.hr",
+    "icon": "/images/icons/Email.png"
+  },
+  {
+    "name": ":",
+    "value": "",
+    "icon": "/images/icons/Facebook.png"
+  },
+  {
+    "name": "adresa",
+    "value": "XXVIII Miljkovica 9, 23234 Otok Vir, Hrvatska",
+    "icon": "/images/icons/Adresa.png"
+  }
+]

@@ -5,31 +5,51 @@ import "./Header.css";
 
 function Header() {
   const { t } = useTranslation(["common"]);
-  const { kontakt, setKontakt, apNum, changeLanguage } = useContext(Context);
-  const kontaktStyle = {
-    color: kontakt === true ? "black" : apNum !== 0 ? "black" : "white",
+  const {
+    kontakt,
+    setKontakt,
+    changeLanguage,
+    weather,
+    setWeather,
+    isLoading,
+    setIsLoading,
+  } = useContext(Context);
+
+  const Search = async () => {
+    if (weather.length !== 0) {
+      return weather;
+    }
+
+    const response = await fetch(
+      `https://yahoo-weather5.p.rapidapi.com/weather?location=vir hrvatska&format=json&u=c`,
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "yahoo-weather5.p.rapidapi.com",
+          "x-rapidapi-key": `${process.env.REACT_APP_WEATHER_KEY}`,
+        },
+      }
+    );
+    const data = await response.json();
+    setWeather(data);
+    setIsLoading(!isLoading);
   };
+
   return (
     <div className="Header">
       <button
         className="HeaderBtn"
-        style={kontaktStyle}
-        onClick={() => setKontakt(!kontakt)}
+        onClick={() => {
+          Search();
+          setKontakt(!kontakt);
+        }}
       >
         {t("kontakt")}
       </button>
-      <button
-        onClick={changeLanguage("hr")}
-        style={kontaktStyle}
-        className="HeaderBtn"
-      >
+      <button onClick={changeLanguage("hr")} className="HeaderBtn">
         HR
       </button>
-      <button
-        onClick={changeLanguage("en")}
-        style={kontaktStyle}
-        className="HeaderBtn"
-      >
+      <button onClick={changeLanguage("en")} className="HeaderBtn">
         EN
       </button>
     </div>

@@ -1,7 +1,7 @@
 .Header {
   display: flex;
   justify-content: flex-end;
-  padding: 1.5rem;
+  padding: 1rem 4rem 1rem 0;
   background-color: transparent;
 }
 .HeaderBtn {
@@ -15,7 +15,17 @@
   letter-spacing: 0em;
   text-align: left;
   cursor: pointer;
+  color: black;
 }
 .HeaderBtn:last-child {
   margin-right: 0;
+}
+
+@media (max-width: 850px) {
+  .Header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 2rem 1rem 0;
+    background-color: transparent;
+  }
 }

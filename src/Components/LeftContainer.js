@@ -2,33 +2,17 @@ import React, { useContext } from "react";
 import { Context } from "./Contexts/Context";
 import Home from "./Home";
 import Apartments from "./Apartments";
-import Kontakt from "./Kontakt";
+import Contact from "./Contact";
 import { useTranslation } from "react-i18next";
-import Galerija from "./Galerija";
-import Map from "./Map";
+import apartmani from "../Data/apartmani.json";
 
 const LeftContainer = () => {
-  let width = window.innerWidth;
   const { t } = useTranslation(["common"]);
-  const {
-    apNum,
-    setApNum,
-    apartmani,
-    toggle,
-    setToggle,
-    active,
-    setActive,
-    open,
-    setOpen,
-    handleOpen,
-    handleClose,
-    kontakt,
-    setKontakt,
-  } = useContext(Context);
+  const { apNum, setApNum, setToggle, kontakt } = useContext(Context);
   return (
     <div className="leftContainer">
       {kontakt === true ? (
-        <Kontakt />
+        <Contact />
       ) : (
         <>
           <div className="mainContainer">
@@ -43,7 +27,7 @@ const LeftContainer = () => {
                 <button
                   onClick={() => {
                     setApNum(0);
-                    setActive(1);
+                    setToggle(false);
                   }}
                   className="pocetna"
                 >

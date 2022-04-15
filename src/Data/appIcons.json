@@ -1,0 +1,47 @@
+[
+  { "name": "klima", "id": "Klima", "icon": "/images/icons/Klima1.png" },
+  { "name": "WiFi", "id": "WiFi", "icon": "/images/icons/WiFi.png" },
+  {
+    "name": "TV",
+    "id": "Tv",
+    "icon": "/images/icons/Tv1.png",
+    "style": "4rem"
+  },
+  {
+    "name": "kuhalo",
+    "id": "Kuhalo",
+    "icon": "/images/icons/Kuhalo.png"
+  },
+  {
+    "name": "mikrovalna",
+    "id": "Mikrovalna",
+    "icon": "/images/icons/Mikrovalna1.png"
+  },
+  {
+    "name": "napa",
+    "id": "Napa",
+    "icon": "/images/icons/Napa.png"
+  },
+  {
+    "name": "kuhinjskaPloca",
+    "id": "Kuhinjskaploca",
+    "icon": "/images/icons/Kuhinjskaploca.png"
+  },
+
+  {
+    "name": "pecnica",
+    "id": "Pecnica",
+    "icon": "/images/icons/Pecnica.png"
+  },
+
+  {
+    "name": "sudjerica",
+    "id": "Sundjerica",
+    "icon": "/images/icons/Sundjerica.png"
+  },
+  {
+    "name": "vesmasina",
+    "id": "Vesmasina",
+    "icon": "/images/icons/Vesmasina.png"
+  }
+]

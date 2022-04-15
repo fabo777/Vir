@@ -1,9 +1,10 @@
 .weatherContainer {
-  margin-top: 20%;
+  margin-top: 10%;
   background-color: rgba(16, 84, 147, 1);
   color: white;
   display: flex;
   flex-direction: column;
+  border-radius: 0.25rem;
 
   text-align: center;
 }

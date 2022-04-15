@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Apartman 1",
+    "id": "1",
+    "text": "app1Text",
+
+    "povrsina": "70m²",
+    "brOsoba": "5",
+    "pictures": ["1", "2", "3", "4", "5", "6"]
+  },
+  {
+    "name": "Apartman 2",
+    "id": "2",
+    "text": "app2Text",
+    "povrsina": "28m²",
+    "brOsoba": "4",
+    "pictures": ["1", "2", "3", "4", "5", "6"]
+  },
+  {
+    "name": "Apartman 3",
+    "id": "3",
+    "text": "app3Text",
+
+    "povrsina": "70m²",
+    "brOsoba": "4",
+    "pictures": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  }
+]
