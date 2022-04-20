@@ -7,7 +7,7 @@ import kontaktArr from "../Data/kontaktArr.json";
 
 const Contact = () => {
   const { t } = useTranslation(["common"]);
-  const { setKontakt, kontakt, ScreenSize } = useContext(Context);
+  const { setKontakt, kontakt, dimensions } = useContext(Context);
 
   const facebookLink = (
     <a
@@ -58,7 +58,7 @@ const Contact = () => {
             );
           })}
         </div>
-        {kontakt === true && ScreenSize < 850 && <Map />}
+        {kontakt === true && dimensions.width < 850 && <Map />}
 
         <Weather />
       </div>

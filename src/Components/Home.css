@@ -5,13 +5,11 @@ body {
 .home {
   width: 88%;
   margin: 0 auto;
-  /* border: 1px solid red; */
 }
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   margin-top: 2rem;
 }
 
@@ -27,7 +25,6 @@ body {
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
-
   height: auto;
 }
 .row {
@@ -39,7 +36,6 @@ body {
   border-bottom: 1px solid #276798;
   border-width: 90%;
   padding: 0.39rem 0;
-
   font-size: 0.8rem;
 }
 .row:last-child {

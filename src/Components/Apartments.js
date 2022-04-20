@@ -8,7 +8,7 @@ import apartmani from "../Data/apartmani.json";
 
 const Apartments = () => {
   const { t } = useTranslation(["common"]);
-  const { apNum, toggle, setToggle, handleOpen, kontakt, ScreenSize } =
+  const { apNum, toggle, setToggle, handleOpen, kontakt, dimensions } =
     useContext(Context);
 
   const btnSadrzaj = {
@@ -47,7 +47,7 @@ const Apartments = () => {
           <div>{apartmani[apNum - 1].brOsoba}</div>
         </div>
       </div>
-      <div style={{ width: "88%", margin: "5% auto 0 auto" }}>
+      <div className="ApartmentsContainer">
         <div className="distance">
           <div className="row">
             <button
@@ -73,7 +73,9 @@ const Apartments = () => {
             </div>
           )}
         </div>
-        {kontakt !== true && apNum !== 0 && ScreenSize < 850 && <Gallery />}
+        {kontakt !== true && apNum !== 0 && dimensions.width < 850 && (
+          <Gallery />
+        )}
         <button onClick={() => handleOpen()} className="Reserve">
           {t("provjeriDostupnost")}
         </button>

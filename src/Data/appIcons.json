@@ -1,10 +1,10 @@
 [
-  { "name": "klima", "id": "Klima", "icon": "/images/icons/Klima1.png" },
+  { "name": "klima", "id": "Klima", "icon": "/images/icons/Klima.png" },
   { "name": "WiFi", "id": "WiFi", "icon": "/images/icons/WiFi.png" },
   {
     "name": "TV",
     "id": "Tv",
-    "icon": "/images/icons/Tv1.png",
+    "icon": "/images/icons/Tv.png",
     "style": "4rem"
   },
   {

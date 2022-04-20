@@ -13,29 +13,35 @@ const GalleryPreviewBtns = ({ setFadeOut }) => {
   }, [apNum]);
 
   const prevPic = () => {
-    setFadeOut(true);
-    setTimeout(() => {
+    setFadeOut("fadeOut");
+    const timer = setTimeout(() => {
       if (showImg === 0) {
         setShowImg(apartmani[apNum - 1].pictures.length - 1);
-        setFadeOut(false);
+        setFadeOut("fadeIn");
       } else {
         setShowImg(showImg - 1);
-        setFadeOut(false);
+        setFadeOut("fadeIn");
       }
-    }, 100);
+    }, 500);
+    return () => {
+      clearTimeout(timer);
+    };
   };
 
   const nextPic = () => {
-    setFadeOut(true);
-    setTimeout(() => {
+    setFadeOut("fadeOut");
+    const timer = setTimeout(() => {
       if (showImg === apartmani[apNum - 1].pictures.length - 1) {
         setShowImg(0);
-        setFadeOut(false);
+        setFadeOut("fadeIn");
       } else {
         setShowImg(showImg + 1);
-        setFadeOut(false);
+        setFadeOut("fadeIn");
       }
-    }, 100);
+    }, 500);
+    return () => {
+      clearTimeout(timer);
+    };
   };
 
   return (
@@ -55,6 +61,7 @@ const GalleryPreviewBtns = ({ setFadeOut }) => {
       ></button>
 
       <button
+        disabled
         style={{
           backgroundImage: ` url(/images/Apartman${apNum}/${showImg}.JPG)`,
         }}

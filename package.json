@@ -1,5 +1,6 @@
 {
   "name": "vir",
+  "homepage": "https://www.apartmani-vesna-vir.com.hr",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

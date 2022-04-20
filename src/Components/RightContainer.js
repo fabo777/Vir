@@ -9,12 +9,11 @@ import Cover from "./Cover";
 import Map from "./Map";
 
 const RightContainer = () => {
-  const { apNum, kontakt, ScreenSize } = useContext(Context);
-
+  const { apNum, kontakt, dimensions } = useContext(Context);
   return (
     <div className="rightContainer">
       <TransitionsModal />
-      {ScreenSize < 850 ? (
+      {dimensions.width < 850 ? (
         <Cover />
       ) : kontakt === true ? (
         <Map />

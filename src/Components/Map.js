@@ -3,10 +3,10 @@ import { Context } from "./Contexts/Context";
 import Header from "./Header";
 
 const Map = () => {
-  const { ScreenSize } = useContext(Context);
+  const { dimensions } = useContext(Context);
   return (
     <div className="fullRightSide">
-      {ScreenSize > 850 && <Header />}
+      {dimensions.width > 850 && <Header />}
       <div className="ImageContainer">
         <div className="kontaktImg">
           <a

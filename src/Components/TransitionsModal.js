@@ -7,13 +7,18 @@ import { Context } from "./Contexts/Context";
 import { ContactUs } from "./ContactUs";
 
 export default function TransitionsModal() {
-  const { open, handleClose, ScreenSize } = useContext(Context);
+  const { open, handleClose, dimensions } = useContext(Context);
   const style = {
     position: "absolute",
     top: "50%",
-    left: ScreenSize < 850 ? "50%" : "65%",
+    left: dimensions.width < 850 ? "50%" : "65%",
     transform: "translate(-50%, -50%)",
-    width: ScreenSize < 420 ? "88%" : ScreenSize < 850 ? "50%" : "fit-content",
+    width:
+      dimensions.width < 420
+        ? "88%"
+        : dimensions.width < 850
+        ? "50%"
+        : "fit-content",
     bgcolor: "rgba(199, 225, 245, 1);",
     border: "none",
     boxShadow: 24,
